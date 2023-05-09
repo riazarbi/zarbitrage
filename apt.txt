@@ -1,0 +1,4 @@
+libsodium-dev
+libmariadb-dev
+libsecret-1-dev
+libpq-dev

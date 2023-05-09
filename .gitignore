@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.bash_history
+.cache
+.config
+.ipynb_checkpoints
+.ipython
+.jupyter
+.local
+.dotnet
+.gnupg
+.vscode-R
+.vscode-server
