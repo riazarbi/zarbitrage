@@ -6,7 +6,6 @@ output:
 ---
 
 ```{r setup, echo=F, results='hide'}
-
 library(duckdb)
 # Libraries
 library(ggplot2)
