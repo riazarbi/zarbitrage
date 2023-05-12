@@ -1,0 +1,49 @@
+---
+title: "ZARBITRAGE"
+output: 
+  flexdashboard::flex_dashboard
+
+---
+
+```{r setup, echo=F, results='hide'}
+
+library(duckdb)
+# Libraries
+library(ggplot2)
+library(dplyr)
+library(plotly)
+library(lubridate)
+```
+
+```{r connect, echo=F, results='hide'}
+# to start an in-memory database
+con <- dbConnect(duckdb::duckdb(), dbdir = "../data/warehouse.duckdb", read_only=TRUE)
+res <- dbGetQuery(con, "TABLE returns") %>% as_tibble()
+```
+
+```{r plot, echo=F}
+g <- res %>%
+filter(hour > now() - days(14)) %>%
+mutate(principal = paste("ZAR", as.factor(principal))) %>%
+rename(Pair=kraken) %>%
+ggplot(aes(x = hour, y = return)) + 
+  geom_line(aes(color = Pair), size = 0.5) + 
+  scale_y_continuous(labels = scales::percent) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) + 
+  ggtitle("Estimated % return per trading pair for varying principals, last 2 weeks") +# for the main title
+  xlab("Percentage Return") + # for the x axis label
+  ylab("Hour") + # for the y axis label
+  facet_wrap(~principal, ncol = 2) + theme_bw() +
+  theme(axis.ticks.x = element_blank(),
+        axis.text.x = element_blank())
+
+```
+
+```{r plotly, fig.width=20, fig.height=20} 
+ggplotly(g)
+```
+
+```{r disconnect, echo=F, results='hide'}
+dbDisconnect(con, shutdown=T)
+```
+

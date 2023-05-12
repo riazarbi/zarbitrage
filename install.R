@@ -14,6 +14,14 @@ packages <- c("gt",
               "rvest",
               "httr",
               "xts",
-              "languageserver")
+              "duckdb",
+              "languageserver",
+              "plotly",
+              "ggplot2",
+              "flexdashboard",
+              "scales",
+              "gridExtra",
+              "reshape2",
+              "zoo")
 
 install.packages(packages)
