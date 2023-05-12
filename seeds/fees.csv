@@ -1,0 +1,8 @@
+provider,service,fee,unit
+broker,commission,0.5,percent
+kraken,deposit,15,USD
+kraken,commission,0.26,percent
+kraken,withdrawal,0.00015,BTC
+luno,deposit,0,BTC
+luno,commission,0.1,percent
+luno,withdrawal,0,ZAR

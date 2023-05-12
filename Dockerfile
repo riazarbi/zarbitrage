@@ -13,7 +13,8 @@ ENV R_LIBS_USER=/usr/local/lib/R/site-library
 WORKDIR /
 
 # Python deps
-RUN pip3 install luno-python
+RUN pip3 install luno-python \
+ && pip3 install dbt-duckdb 
 
 # Install system dependencies
 COPY apt.txt .
@@ -30,6 +31,13 @@ RUN echo "Checking for 'apt.txt'..." \
 # Install R dependencies
 COPY install.R .
 RUN if [ -f install.R ]; then R --quiet -f install.R; fi
+
+# Install duckdb
+RUN wget --quiet https://github.com/duckdb/duckdb/releases/download/v0.7.1/duckdb_cli-linux-amd64.zip \
+ && unzip duckdb_cli-linux-amd64.zip \
+ && chmod +x duckdb \
+ && mv duckdb /bin/duckdb \
+ && duckdb :memory: "INSTALL 'httpfs'"
 
 # Back to non privileged user
 # Make sure the contents of our repo are in ${HOME}

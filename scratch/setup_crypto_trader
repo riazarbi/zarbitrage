@@ -1,0 +1,35 @@
+#!/bin/sh
+# Get pulling the big guy
+base_image=riazarbi/datasci-crypto:latest
+docker pull $base_image
+
+#stop all workloads
+echo Stopping all workoads
+docker container stop $(docker container ls -aq --filter name=crypto*)
+docker container rm $(docker container ls -aq --filter name=crypto*)
+
+
+# Riaz Arbi crypto workloads
+crypto_user=Riaz.Arbi
+
+# kraken trader
+docker run -d --restart=always --name crypto-kraken-trade-$crypto_user \
+-v /data/projects/datasci-crypto:/home/jovyan/datasci-crypto:ro \
+-v /data/projects/secrets.json:/home/jovyan/secrets.json:ro \
+$base_image /bin/bash -c "python3 -u datasci-crypto/kraken-buy.py $crypto_user"
+# kraken gbp trader
+#docker run -d --restart=always  --name crypto-kraken-gbp-trade-$crypto_user \
+#-v /data/projects/datasci-crypto:/home/jovyan/datasci-crypto:ro \
+#-v /data/projects/secrets.json:/home/jovyan/secrets.json:ro \
+#$base_image /bin/bash -c "python3 -u datasci-crypto/kraken-gbp-buy.py $crypto_user"
+#kraken transfer
+docker run -d  --restart=always --name crypto-kraken-tfer-$crypto_user \
+-v /data/projects/datasci-crypto:/home/jovyan/datasci-crypto:ro \
+-v /data/projects/secrets.json:/home/jovyan/secrets.json:ro \
+$base_image /bin/bash -c "python3 -u datasci-crypto/kraken-tfer.py $crypto_user"
+# luno trader
+docker run -d  --restart=always --name crypto-luno-sell-$crypto_user \
+-v /data/projects/datasci-crypto:/home/jovyan/datasci-crypto:ro \
+-v /data/projects/secrets.json:/home/jovyan/secrets.json:ro \
+$base_image /bin/bash -c "python3 -u datasci-crypto/luno-sell.py $crypto_user"
+

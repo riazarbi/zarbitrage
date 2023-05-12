@@ -61,12 +61,12 @@ for (principal in principals) {
   broker_usdzar_rate <- interbank_usdzar_rate * (1+broker_spread)
   principal_usd <- (principal - fee) / broker_usdzar_rate 
   
-  kraken_usd_deposit_fee <- 0
+  kraken_usd_deposit_fee <- 15
   kraken_usd_net <- principal_usd - kraken_usd_deposit_fee
   
   kraken_commission <- 0.0026
   kraken_pair_rate <- median(last(kraken_pair$kraken_ask, "1 day"), na.rm = T)
-  kraken_coin <- principal_usd / kraken_pair_rate / (1+kraken_commission)
+  kraken_coin <- principal_usd / kraken_pair_rate * (1-kraken_commission)
   
   kraken_coin_withdrawal_fee <-	0.00015
   luno_coin <- kraken_coin - kraken_coin_withdrawal_fee
