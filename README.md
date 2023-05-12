@@ -2,6 +2,8 @@
 
 Monitoring the South African cryptocurrency premium since 2023!
 
+Check out the end result here https://riazarbi.github.io/zarbitrage/
+
 ## What is this all about?
 
 An arbitrage opportunity is a term that refers to the possibility to buy and sell the same thing simultaneously in two markets to make a profit. 
