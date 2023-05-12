@@ -31,9 +31,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Pull and run
+        name: Extract
         run: |
           make extract
+      -
+        name: Analyse
+        run: |
+          make analyse
       -
         name: Commit and push
         run: |-

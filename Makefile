@@ -41,9 +41,9 @@ debug: ## Launch an interactive environment
 
 ### Repo-specific targets ###
 
-.PHONY: run
+.PHONY: analyse
 run: ## Run main routine
-	$(build_run) /bin/bash run.sh
+	$(build_run) bash scripts/analyse.sh
 
 .PHONY: extract
 extract: ## Run main routine
