@@ -2,7 +2,11 @@
 
 Monitoring the South African cryptocurrency premium since 2023!
 
-Check out the end result here https://riazarbi.github.io/zarbitrage/
+Check out the dashboard here https://riazarbi.github.io/zarbitrage/  
+
+If you are a robot, get the latest estimated returns here https://riazarbi.github.io/zarbitrage/latest.json  
+
+...and get the latest rankings here https://riazarbi.github.io/zarbitrage/latest.json
 
 ## What is this all about?
 
