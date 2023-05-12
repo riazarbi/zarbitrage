@@ -1,4 +1,4 @@
-name: run
+name: extract
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
     branches:
       - 'main'
   schedule:
-    - cron:  '20 */4 * * *'
+    - cron:  '*/20 * * * *'
 
 env:
   GITHUB_PAT: ${{ secrets.GH_PAT }}
@@ -33,7 +33,7 @@ jobs:
       -
         name: Pull and run
         run: |
-          make run
+          make extract
       -
         name: Commit and push
         run: |-
