@@ -24,7 +24,7 @@ pull: ## Pull build image from docker hub
 	docker pull $(debug_image)
 
 .PHONY: push
-push: build build-debug ## Pull build image from docker hub
+push: build ## Pull build image from docker hub
 	docker push $(build_image)
 
 .PHONY: test
