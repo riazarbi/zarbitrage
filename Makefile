@@ -42,7 +42,7 @@ debug: ## Launch an interactive environment
 ### Repo-specific targets ###
 
 .PHONY: analyse
-run: ## Run main routine
+analyse: ## Run main routine
 	$(build_run) bash scripts/analyse.sh
 
 .PHONY: extract
