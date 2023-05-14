@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"ETHUSDC",1684056789476,"1800.61000000","1803.70000000","1804.30000000","2.90200000","ACTIVE",1684056789476

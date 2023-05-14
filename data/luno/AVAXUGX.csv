@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"AVAXUGX",1684056788710,"56586.00000000","56704.00000000","56774.00000000","1.74000000","ACTIVE",1684056788710

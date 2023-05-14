@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"XBTGBP",1684056791115,"20913.10000000","21749.55000000","21610.53000000","0.01420000","ACTIVE",1684056791115

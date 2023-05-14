@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"SOLMYR",1684056785368,"94.69000000","94.76000000","94.67000000","2917.61910000","ACTIVE",1684056785368

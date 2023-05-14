@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"UNIMYR",1684056783751,"23.08000000","23.10000000","23.10000000","755.04000000","ACTIVE",1684056783751

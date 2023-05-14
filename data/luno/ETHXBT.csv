@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"ETHXBT",1684056789603,"0.06718700","0.06723100","0.06718700","15.18000000","ACTIVE",1684056789603

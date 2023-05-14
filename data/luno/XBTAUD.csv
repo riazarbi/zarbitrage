@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"XBTAUD",1684056791242,"40371.43000000","40446.43000000","40464.69000000","0.13930000","ACTIVE",1684056791242

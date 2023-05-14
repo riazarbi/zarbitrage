@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"XBTUSDC",1684056790849,"26678.34000000","26897.02000000","26800.00000000","0.14620000","ACTIVE",1684056790849

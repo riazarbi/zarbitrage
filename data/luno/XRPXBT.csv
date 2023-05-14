@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"XRPXBT",1684056788963,"0.00001586","0.00001587","0.00001587","197283.00000000","ACTIVE",1684056788963

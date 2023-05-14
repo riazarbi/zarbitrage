@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"ETHGBP",1684056789870,"1321.48000000","1499.96000000","1499.97000000","0.00920000","ACTIVE",1684056789870

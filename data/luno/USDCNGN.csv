@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"USDCNGN",1684056783230,"742.00000000","750.00000000","747.00000000","6230.90000000","ACTIVE",1684056783230

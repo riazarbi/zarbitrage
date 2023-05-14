@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"XBTMYR",1684056791696,"120845.00000000","120846.00000000","120846.00000000","12.95221800","ACTIVE",1684056791696

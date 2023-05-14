@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"LTCMYR",1684056787364,"363.00000000","365.00000000","365.00000000","757.63140000","ACTIVE",1684056787364
