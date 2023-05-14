@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"LTCXBT",1684056787237,"0.00301200","0.00301500","0.00301100","153.91000000","ACTIVE",1684056787237

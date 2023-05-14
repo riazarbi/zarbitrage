@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"BCHMYR",1684056783624,"511.00000000","514.00000000","514.00000000","36.14840000","ACTIVE",1684056783624

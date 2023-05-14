@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"ETHMYR",1684056790460,"8116.00000000","8119.00000000","8116.00000000","81.53340000","ACTIVE",1684056790460

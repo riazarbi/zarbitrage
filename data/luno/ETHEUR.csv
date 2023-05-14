@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"ETHEUR",1684056789730,"1604.20000000","1719.97000000","1719.98000000","0.00310000","ACTIVE",1684056789730

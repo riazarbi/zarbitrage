@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"SOLZAR",1684056785749,"410.68000000","413.93000000","413.90000000","1322.64490000","ACTIVE",1684056785749

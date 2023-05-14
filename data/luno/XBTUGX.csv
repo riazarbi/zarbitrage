@@ -1,0 +1,2 @@
+pair,timestamp,bid,ask,last_trade,rolling_24_hour_volume,status,client_timestamp
+"XBTUGX",1684056791954,"106343000.00000000","107342000.00000000","107257000.00000000","0.02201000","ACTIVE",1684056791954
