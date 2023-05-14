@@ -3,7 +3,7 @@
 files.sources = list.files("R", full.names=T)
 sapply(files.sources, source)
 
-kraken_pairs <- c("ETHUSD", "XXBTZUSD", "XMRUSD", "XRPUSD", "LTCUSD", "UNIUSD", "USDCUSD", "ADAUSD")
+kraken_pairs <- c("ETHUSD", "XXBTZUSD", "XMRUSD", "XRPUSD", "LTCUSD", "UNIUSD", "USDCUSD", "ADAUSD", "UNIETH", "ADAETH")
 luno_pairs <- luno_pairs()
 xe_pairs <- list(c("USD","ZAR"), c("USD", "BWP"), c("ZAR", "BWP"))
 yahoo_pairs <- c("ZAR", "BWP", "EUR")
