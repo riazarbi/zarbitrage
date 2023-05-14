@@ -4,7 +4,7 @@ files.sources = list.files("R", full.names=T)
 sapply(files.sources, source)
 
 kraken_pairs <- c("ETHUSD", "XXBTZUSD", "XMRUSD", "XRPUSD", "LTCUSD", "UNIUSD", "USDCUSD", "ADAUSD")
-luno_pairs <- c("ETHZAR", "XBTZAR", "XRPZAR", "LTCZAR", "UNIZAR", "USDCZAR", "ADAZAR")
+luno_pairs <- luno_pairs()
 xe_pairs <- list(c("USD","ZAR"), c("USD", "BWP"), c("ZAR", "BWP"))
 yahoo_pairs <- c("ZAR", "BWP", "EUR")
 
@@ -12,7 +12,6 @@ for (pair in kraken_pairs) {
     print(pair)
     query_kraken(pair)
 }
-
 
 for (pair in luno_pairs) {
     print(pair)
