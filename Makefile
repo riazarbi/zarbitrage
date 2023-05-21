@@ -46,6 +46,11 @@ extract: ## Run main routine
 	$(build_run) Rscript scripts/extract.R
 
 .PHONY: analyse
+extract: ## Run main routine
+	$(build_run) bash scripts/transform.sh
+
+
+.PHONY: analyse
 analyse: ## Run main routine
 	$(build_run) bash scripts/analyse.sh
 
