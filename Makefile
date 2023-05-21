@@ -45,6 +45,10 @@ debug: ## Launch an interactive environment
 extract: ## Run main routine
 	$(build_run) Rscript scripts/extract.R
 
+.PHONY: document
+document: ## Run main routine
+	$(build_run) bash scripts/document.sh
+
 .PHONY: analyse
 analyse: ## Run main routine
 	$(build_run) bash scripts/analyse.sh

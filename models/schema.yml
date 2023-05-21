@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: stg_kraken
+    description: Kraken data with just the necessary columns and properly cast timestamps
+  - name: stg_luno
+    description: Luno data with just the necessary columns and properly cast timestamps
+  - name: stg_yahoo
+    description: Yahoo data with just the necessary columns and properly cast timestamps
+  - name: int_kraken
+    description: Raw kraken data grouped into median hourly data. We just care about the kraken ask as we are buyers
+  - name: int_luno
+    description: Raw luno data grouped into median hourly data. We just care about the bid because we are sellers
+  - name: int_yahoo
+    description: Raw kraken data grouped into median hourly data. We just care about the ask because we are buying USD
+  - name: int_union_prices
+    description: Yahoo, luno, and kraken hourly prices unified into a single table
+  - name: int_union_principals
+    description: Merge prices, principal investment amounts and associated SWIFT fees together
+    columns: 
+      - name: principal
+        description: The principal to be invested in ZAR
+      - name: swift_fee
+        description: The SWIFT fee the broker will charge to send the USD to the receiving bank
+  - name: int_nominal
+    description: Add a nominal column to int_principals that gives you the expected ZAR amount from the investment round trip
+    columns:
+      - name:  nominal
+        description: The nominal amount, in ZAR, you can expect to arrive in your Luno account after executing the arbitrage trade
+  - name: returns
+    description: Shows the estimated return for each principal for each hour for each pair
+    columns:
+      - name:  hour
+        description: The hour we are modeling for
+      - name: kraken
+        description: The Kraken pair associated with the arbitrage loop 
+      - name: principal
+        description: The initial ZAR amount used
+      - name: nominal
+        description: The extimated ZAR amount you will have after the loop has run
+      - name: return
+        description: The percentage return represented by the nominal over the principal
