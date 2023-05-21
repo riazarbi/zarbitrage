@@ -41,10 +41,11 @@ debug: ## Launch an interactive environment
 
 ### Repo-specific targets ###
 
+.PHONY: extract
+extract: ## Run main routine
+	$(build_run) Rscript scripts/extract.R
+
 .PHONY: analyse
 analyse: ## Run main routine
 	$(build_run) bash scripts/analyse.sh
 
-.PHONY: extract
-extract: ## Run main routine
-	$(build_run) Rscript scripts/extract.R

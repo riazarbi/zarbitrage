@@ -3,13 +3,8 @@ options(repos="https://packagemanager.rstudio.com/all/__linux__/focal/latest")
 source("https://docs.posit.co/rspm/admin/check-user-agent.R")
 Sys.setenv("NOT_CRAN" = TRUE)
 
-packages <- c("gt", 
-              "dplyr", 
-              "arrow", 
-              "blastula", 
+packages <- c("dplyr", 
               "readr", 
-              "prophet", 
-              "forecast", 
               "data.table",
               "rvest",
               "httr",
