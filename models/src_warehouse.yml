@@ -9,10 +9,28 @@ sources:
     schema: main
     tables:
       - name: kraken
-        description: Kraken trading pairs historical quote data
+        description: Kraken trading pairs historical quote data, as obtained from the Krapen API
         columns:
           - name: pair
-            description: Trading pair            
+            description: Trading pair
+          - name: client_timestamp
+            description: The timestamp reported by the ingest client machine at the time of ingest    
+          - name: ask
+            description: The ask
+          - name: bid
+            description: The bid
+          - name: last
+            description: The last traded price
+          - name: volume
+            description: The total volume traded
+          - name: vwap_today
+            description: The volume weighted averave price for the trading day
+          - name: num_trades_today
+            description: Number of trades completed today
+          - name: low_today
+            description: Lowest trade price today
+          - name: high_today            
+            description: Highest trade price today
         tests:
           - dbt_utils.unique_combination_of_columns:
               combination_of_columns:
@@ -25,7 +43,17 @@ sources:
           - name: pair
             description: Trading pair     
           - name: client_timestamp
-            description: The timestamp reported by the ingest client machine at the time of ingest       
+            description: The timestamp reported by the ingest client machine at the time of ingest    
+          - name: bid
+            description: The highest bid price
+          - name: ask
+            description: The lowest ask price
+          - name: last_trade
+            description: Last trade price
+          - name: rolling_24_hour_volume
+            description: 24h rolling trade volume
+          - name: status
+            description: Market current status
         tests:
           - dbt_utils.unique_combination_of_columns:
               combination_of_columns:
@@ -38,7 +66,9 @@ sources:
           - name: pair
             description: Trading pair            
           - name: client_timestamp
-            description: The timestamp reported by the ingest client machine at the time of ingest       
+            description: The timestamp reported by the ingest client machine at the time of ingest    
+          - name: rate
+            description: Exchange rate   
         tests:
           - dbt_utils.unique_combination_of_columns:
               combination_of_columns:
@@ -52,7 +82,14 @@ sources:
             description: Trading pair            
           - name: client_timestamp
             description: The timestamp reported by the ingest client machine at the time of ingest   
-
+          - name: prev_close
+            description: The previous close price
+          - name: open
+            description: Opening price
+          - name: bid
+            description: Highest bid price
+          - name: ask
+            descrption: Lowest ask price
         tests:
           - dbt_utils.unique_combination_of_columns:
               combination_of_columns:
