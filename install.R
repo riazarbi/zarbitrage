@@ -4,6 +4,7 @@ source("https://docs.posit.co/rspm/admin/check-user-agent.R")
 Sys.setenv("NOT_CRAN" = TRUE)
 
 packages <- c("dplyr", 
+              "lubridate",
               "readr", 
               "data.table",
               "rvest",
