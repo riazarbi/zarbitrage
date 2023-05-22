@@ -1,4 +1,4 @@
-ARG FROMIMG=riazarbi/maker_binder:20230522
+ARG FROMIMG=riazarbi/maker_binder:latest
 
 FROM ${FROMIMG}
 
