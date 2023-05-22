@@ -1,12 +1,18 @@
 # ZARBITRAGE
 
+![Docker Build](https://github.com/riazarbi/zarbitrage/actions/workflows/build.yaml/badge.svg)
+
+![DBT Build](https://github.com/riazarbi/zarbitrage/actions/workflows/run.yaml/badge.svg)
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/riazarbi/zarbitrage/HEAD)
+
 Monitoring the South African cryptocurrency premium since 2023!
 
 Check out the dashboard here https://riazarbi.github.io/zarbitrage/  
 
-If you are a robot, get the latest estimated returns here https://riazarbi.github.io/zarbitrage/latest.json  
+If you are a robot, get the latest estimated returns here https://riazarbi.github.io/zarbitrage/latest.json  ...and get the latest rankings here https://riazarbi.github.io/zarbitrage/latest.json
 
-...and get the latest rankings here https://riazarbi.github.io/zarbitrage/latest.json
+
 
 ## What is this all about?
 
