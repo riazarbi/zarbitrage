@@ -1,4 +1,4 @@
-ARG FROMIMG=riazarbi/maker_binder:20230127
+ARG FROMIMG=riazarbi/maker_binder:20230522
 
 FROM ${FROMIMG}
 
@@ -13,8 +13,8 @@ ENV R_LIBS_USER=/usr/local/lib/R/site-library
 WORKDIR /
 
 # Python deps
-RUN pip3 install luno-python \
- && pip3 install dbt-duckdb 
+RUN  pip3 install duckdb==0.7.1 \
+ && pip3 install dbt-duckdb==1.5.1 
 
 # Install system dependencies
 COPY apt.txt .

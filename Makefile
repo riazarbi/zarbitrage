@@ -1,7 +1,7 @@
 ### Modifiable variables ###
 
-build_image := riazarbi/zarbitrage:20230127
-build_source := riazarbi/maker:20230127
+build_image := riazarbi/zarbitrage:20230522
+build_source := riazarbi/maker:20230522
 
 build_run := docker run --rm --user root  --mount type=bind,source="$(shell pwd)/",target=/home/maker $(build_image)
 debug_run := docker run --name debug -it --rm  --mount type=bind,source="$(shell pwd)/",target=/home/maker $(build_image) 
@@ -16,7 +16,7 @@ help: ## Show available targets
 
 .PHONY: build
 build: ## Build docker container with required dependencies and data
-	docker build -t $(build_image) --build-arg FROMIMG=$(build_source) .
+	docker build -t $(build_image) --no-cache --build-arg FROMIMG=$(build_source) .
 
 .PHONY: pull
 pull: ## Pull build image from docker hub
@@ -33,7 +33,7 @@ test: ## Run tests
 
 .PHONY: clean
 clean: ## Remove build files
-	rm -rf .cache .config .ipython .jupyter .local .Rhistory .Rproj.user
+	rm -rf .cache .config .ipython .jupyter .local .Rhistory .Rproj.user data/warehouse.db
 
 .PHONY: debug
 debug: ## Launch an interactive environment
@@ -45,6 +45,10 @@ debug: ## Launch an interactive environment
 extract: ## Run main routine
 	$(build_run) Rscript scripts/extract.R
 
+.PHONY: transform
+transform: ## Run main routine
+	$(build_run) bash scripts/transform.sh
+
 .PHONY: document
 document: ## Run main routine
 	$(build_run) bash scripts/document.sh
@@ -52,4 +56,3 @@ document: ## Run main routine
 .PHONY: analyse
 analyse: ## Run main routine
 	$(build_run) bash scripts/analyse.sh
-

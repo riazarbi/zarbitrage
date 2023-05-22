@@ -1,8 +1,10 @@
 ---
 title: "ZARBITRAGE"
-output: 
-  flexdashboard::flex_dashboard
-
+output:
+  flexdashboard::flex_dashboard:
+    source_code: "https://github.com/riazarbi/zarbitrage"
+    navbar:
+      - { icon: "fa-database", href: "https://riazarbi.github.io/zarbitrage/documentation.html", align: right }
 ---
 
 ```{r setup, echo=F, results='hide'}

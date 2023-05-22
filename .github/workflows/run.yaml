@@ -35,6 +35,14 @@ jobs:
         run: |
           make extract
       -
+        name: Transform
+        run: |
+          make transform
+      -
+        name: Document
+        run: |
+          make document
+      -
         name: Analyse
         run: |
           make analyse
