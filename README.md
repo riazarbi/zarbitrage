@@ -13,7 +13,6 @@ Check out the dashboard here https://riazarbi.github.io/zarbitrage/
 If you are a robot, get the latest estimated returns here https://riazarbi.github.io/zarbitrage/latest.json  ...and get the latest rankings here https://riazarbi.github.io/zarbitrage/latest.json
 
 
-
 ## What is this all about?
 
 An arbitrage opportunity is a term that refers to the possibility to buy and sell the same thing simultaneously in two markets to make a profit. 
@@ -36,15 +35,6 @@ Of course! Google is your friend. Two reasons why you might end up using this th
 
 1. Premiums are volatile. They change by the hour, so every time you want to know the premium you'll have to eat a few minutes out of your day looking up all the values and computing them 
 2. Just because the reference prices suggest an arbitrage does not mean that an arbitrage opportunity exists. Have you taken into account transaction fees? Deposit fees? Withdrawal fees? Broker spreads? SWIFT fees? This repo tries to take all of that into account. 
-
-## Ok so how do I check the premium?
-
-If you are a human, check out the github pages website for this repo at https://riazarbi.github,.io/zarbitrage
-
-If you are a robot, you have two options - 
-
-1. Clone the repo and connect to the `duckdb` database with your favourite client.
-2. Hit up ____ to get the raw instance premium for a range of currencies.
 
 ## This is so cool can I {contribute,use this to make money,clone this and hoard it}
 
