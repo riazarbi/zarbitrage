@@ -1,4 +1,4 @@
-name: extract
+name: run
 
 on:
   workflow_dispatch:
