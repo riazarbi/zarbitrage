@@ -4,7 +4,7 @@ WITH percentiles AS (
         return, 
         percent_rank() OVER (ORDER BY return) AS percentile 
     FROM 
-        returns
+        {{ ref('returns') }}
     WHERE 
         kraken='XXBTZUSD' AND 
         principal=500000 AND 
