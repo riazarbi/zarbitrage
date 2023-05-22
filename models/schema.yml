@@ -32,11 +32,31 @@ models:
     columns:
       - name:  hour
         description: The hour we are modeling for
+        tests:
+          - not_null
       - name: kraken
         description: The Kraken pair associated with the arbitrage loop 
+        tests:
+          - not_null
+          - relationships:
+              to: ref('trade_loops')
+              field: kraken
+
       - name: principal
         description: The initial ZAR amount used
+        tests:
+          - not_null
       - name: nominal
         description: The extimated ZAR amount you will have after the loop has run
+        tests:
+          - not_null
       - name: return
         description: The percentage return represented by the nominal over the principal
+        tests:
+          - not_null
+    tests:
+        - dbt_utils.unique_combination_of_columns:
+            combination_of_columns:
+              - hour
+              - kraken
+              - principal
