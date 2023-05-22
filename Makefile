@@ -50,9 +50,9 @@ transform: ## Run main routine
 	$(build_run) bash scripts/transform.sh
 
 .PHONY: document
-document: transform ## Run main routine
+document: ## Run main routine
 	$(build_run) bash scripts/document.sh
 
 .PHONY: analyse
-analyse: document ## Run main routine
+analyse: ## Run main routine
 	$(build_run) bash scripts/analyse.sh
