@@ -4,4 +4,4 @@ select
     principal, 
     nominal, 
     nominal/principal-1 as return 
-from int_nominal
+from {{ ref('int_nominal') }}
