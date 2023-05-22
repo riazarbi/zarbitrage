@@ -1,0 +1,14 @@
+version: 2
+
+analyses:
+  - name: current_return_percentile
+    description: Tells you what percentile the latest bitcoin round trip return is relative to the last two weeks
+    docs:
+      show: true
+    columns:
+      - name: hour
+        description: The hour of the observation
+      - name: return
+        description: The expected return
+      - name: percentile
+        description: The percentile rank of the return relative to all the observations in the last two weeks
