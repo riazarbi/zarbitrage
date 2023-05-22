@@ -1,0 +1,5 @@
+version: 2
+
+macros:
+  - name: compute_nominal
+    description: '{{ doc("compute_nominal") }}'
