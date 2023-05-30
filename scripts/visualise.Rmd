@@ -23,7 +23,7 @@ con <- dbConnect(duckdb::duckdb(), dbdir = "../data/warehouse.duckdb", read_only
 res <- dbGetQuery(con, "TABLE returns") %>% as_tibble()
 ```
 
-All tokens
+All
 =====================================  
 
 ```{r plot, echo=F}
@@ -48,7 +48,7 @@ ggplot(aes(x = hour, y = return)) +
 ggplotly(g)
 ```
 
-BTC 300k
+BTC
 =====================================  
 
 ```{r plot_btc, echo=F}
