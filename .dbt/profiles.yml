@@ -1,0 +1,11 @@
+zarbitrage:
+  target: dev
+  schema: analytics
+  outputs:
+    dev:
+      type: duckdb
+      path: '/home/maker/data/warehouse.duckdb'
+      extensions:
+        - httpfs
+        - parquet
+ 

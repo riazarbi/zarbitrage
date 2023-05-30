@@ -1,0 +1,37 @@
+version: 2
+
+seeds:
+  - name: trade_loops
+    description: |
+      Each row corresponds to a defined trade loop. 
+      If you add a row, the build will compute that loop as well
+    columns:
+      - name: kraken
+        description: The Kraken pair traded in that particular loop
+      - name: luno
+        description: The Luno pair traded in that particular loop
+      - name: fx
+        description: The currency pair traded in that loop
+      - name: broker_commission
+        description: The presumed commission charged by the forex broker
+      - name: kraken_deposit_fee
+        description: The USD fee charged by Kraken when you deposit cash
+      - name: kraken_commission
+        description: The percentage commission charged by Kraken to execute a trade
+      - name: kraken_withdrawal_fee
+        description: The fee, in cryptocurrency, charged by Kraken to withdraw crypto to another wallet
+      - name: luno_deposit_fee
+        description: The fee, in cryptocurrency, charged by Luno to receive tokens from another wallet
+      - name: luno_commission
+        description: The percentage commission charged by Luno to sell cryptocurrency
+      - name: luno_withdrawal_fee
+        description: The fee, in ZAR, charged by Luno to withdraw funds to a South African bank account
+  - name: principals
+    description: |
+      Principal amounts, in ZAR< that we will use to model the estimated return. 
+      We need to use varying principals because some of the costs are fixed - therefore, larger principal amounts will have higher returns as these fixed costs become a smaller proportion of the return.
+    columns:
+      - name: kraken
+        description: The Kraken pair traded in that particular loop
+      - name: luno
+        description: The Luno pair traded in that particular loop
