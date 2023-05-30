@@ -13,7 +13,7 @@ ENV R_LIBS_USER=/usr/local/lib/R/site-library
 WORKDIR /
 
 # Python deps
-RUN  pip3 install duckdb==0.7.1 \
+RUN  pip3 install duckdb==0.8.0 \
  && pip3 install dbt-duckdb==1.5.1 
 
 # Install system dependencies
@@ -37,7 +37,7 @@ COPY install.R .
 RUN if [ -f install.R ]; then R --quiet -f install.R; fi
 
 # Install duckdb
-RUN wget --quiet https://github.com/duckdb/duckdb/releases/download/v0.7.1/duckdb_cli-linux-amd64.zip \
+RUN wget --quiet https://github.com/duckdb/duckdb/releases/download/v0.8.0/duckdb_cli-linux-amd64.zip \
  && unzip duckdb_cli-linux-amd64.zip \
  && chmod +x duckdb \
  && mv duckdb /bin/duckdb \
