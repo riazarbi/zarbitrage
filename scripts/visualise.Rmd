@@ -23,32 +23,8 @@ con <- dbConnect(duckdb::duckdb(), dbdir = "../data/warehouse.duckdb", read_only
 res <- dbGetQuery(con, "TABLE returns") %>% as_tibble()
 ```
 
-All
-=====================================  
 
-```{r plot, echo=F}
-g <- res %>%
-filter(hour > now() - days(90)) %>%
-mutate(principal = paste("ZAR", as.factor(principal))) %>%
-rename(Pair=kraken) %>%
-ggplot(aes(x = hour, y = return)) + 
-  geom_line(aes(color = Pair), size = 0.5) + 
-  scale_y_continuous(labels = scales::percent) +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) + 
-  ggtitle("Estimated % return per trading pair for varying principals, last 90 days") + # for the main title
-  xlab("Hour") + # for the x axis label
-  ylab("Percentage Return") + # for the y axis label
-  facet_wrap(~principal, ncol = 2) + theme_bw() +
-  theme(axis.ticks.x = element_blank(),
-        axis.text.x = element_blank())
-
-```
-
-```{r plotly, fig.width=20, fig.height=20} 
-ggplotly(g)
-```
-
-BTC
+BTC / ZAR
 =====================================  
 
 ```{r plot_btc, echo=F}
@@ -71,11 +47,63 @@ ggplot(aes(x = hour, y = return)) +
 
 ```
 
+
+
 ```{r plotly_btc, fig.width=20, fig.height=20} 
 ggplotly(b)
 ```
 
+ZAR / USD
+=====================================  
+
+```{r plot_zar, echo=F}
+b <- dbGetQuery(con, "select * from  int_yahoo where pair='USDZAR'") %>% 
+as_tibble() %>%
+filter(hour > now() - days(14)) %>%
+rename(Pair=pair) %>%
+ggplot(aes(x = hour, y = yahoo_ask)) + 
+  geom_line(aes(color = Pair), size = 0.5) + 
+  scale_y_continuous() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) + 
+  ggtitle("USDZAR ask, last 14 days") + # for the main title
+  xlab("Hour") + # for the x axis label
+  ylab("Rate") + # for the y axis label
+  theme_bw() +
+  theme(axis.ticks.x = element_blank(),
+        axis.text.x = element_blank())
+
+```
+
+```{r plotly_zar, fig.width=20, fig.height=20} 
+ggplotly(b)
+```
+
+
+
+All
+=====================================  
+
+```{r plot, echo=F}
+g <- res %>%
+filter(hour > now() - days(14)) %>%
+mutate(principal = paste("ZAR", as.factor(principal))) %>%
+rename(Pair=kraken) %>%
+ggplot(aes(x = hour, y = return)) + 
+  geom_line(aes(color = Pair), size = 0.5) + 
+  scale_y_continuous(labels = scales::percent) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) + 
+  ggtitle("Estimated % return per trading pair for varying principals, last 14 days") + # for the main title
+  xlab("Hour") + # for the x axis label
+  ylab("Percentage Return") + # for the y axis label
+  facet_wrap(~principal, ncol = 2) + theme_bw() +
+  theme(axis.ticks.x = element_blank(),
+        axis.text.x = element_blank())
+
+```
+
+```{r plotly, fig.width=20, fig.height=20} 
+ggplotly(g)
+```
 ```{r disconnect, echo=F, results='hide'}
 dbDisconnect(con, shutdown=T)
 ```
-
