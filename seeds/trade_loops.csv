@@ -1,0 +1,9 @@
+kraken,luno,fx,broker_commission,kraken_deposit_fee,kraken_commission,kraken_withdrawal_fee,luno_deposit_fee,luno_commission,luno_withdrawal_fee
+ETHUSD,ETHZAR,USDZAR,0.0035,3,0.0016,0.003,0,0.002,0
+XXBTZUSD,XBTZAR,USDZAR,0.0035,3,0.0016,0.0002,0,0.002,0
+XRPUSD,XRPZAR,USDZAR,0.0035,3,0.0016,0.2,0,0.002,0
+LTCUSD,LTCZAR,USDZAR,0.0035,3,0.0016,0.002,0,0.002,0
+ADAUSD,ADAZAR,USDZAR,0.0035,3,0.0016,1,0,0.002,0
+UNIUSD,UNIZAR,USDZAR,0.0035,3,0.0016,0.94,0,0.002,0
+
+
