@@ -39,3 +39,18 @@ Of course! Google is your friend. Two reasons why you might end up using this th
 ## This is so cool can I {contribute,use this to make money,clone this and hoard it}
 
 You can do whatever you want with it. I might not respond to you, because, well, I don't have to. If you want to actually use this to make decisions _about the real world_ then you are on your own. **You have to verify the coerrectness of this code yourself**. I take NO responsibility for the accuracy of anything.
+
+## Maintenance Tasks
+
+I use this repo as a data store. Because we are storing binaries and html in the repo, that means that the repo size gets big very quickly. 
+
+To mitigate against this, I periodically delete the git history. Here is how I do that;
+
+```
+git checkout --orphan ini-branch
+git add --all
+git commit -m "history reset"
+git branch -D main
+git branch -m main
+git push -f origin main
+```

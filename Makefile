@@ -3,8 +3,8 @@
 build_image := riazarbi/zarbitrage:20230523
 build_source := riazarbi/maker:20230523
 
-build_run := docker run --rm --user root  --mount type=bind,source="$(shell pwd)/",target=/home/maker $(build_image)
-debug_run := docker run --name debug -it --rm  --mount type=bind,source="$(shell pwd)/",target=/home/maker $(build_image) 
+build_run := docker run --rm --user root --platform linux/amd64 --mount type=bind,source="$(shell pwd)/",target=/home/maker $(build_image)
+debug_run := docker run --name debug -it --rm --platform linux/amd64 --mount type=bind,source="$(shell pwd)/",target=/home/maker $(build_image) 
 
 ### Generic targets DO NOT MODIFY ###
 
@@ -16,7 +16,7 @@ help: ## Show available targets
 
 .PHONY: build
 build: ## Build docker container with required dependencies and data
-	docker build -t $(build_image) --no-cache --build-arg FROMIMG=$(build_source) .
+	docker build --platform linux/amd64  -t $(build_image) --no-cache --build-arg FROMIMG=$(build_source) .
 
 .PHONY: pull
 pull: ## Pull build image from docker hub

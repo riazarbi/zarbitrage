@@ -29,7 +29,7 @@ RUN echo "Checking for 'apt.txt'..." \
         ; fi
 
 # Install pandoc
-RUN wget -O pandoc.deb https://github.com/jgm/pandoc/releases/download/3.1.2/pandoc-3.1.2-1-amd64.deb \
+RUN wget -O pandoc.deb https://github.com/jgm/pandoc/releases/download/3.1.6.1/pandoc-3.1.6.1-1-amd64.deb \
  && dpkg -i pandoc.deb
 
 # Install R dependencies
