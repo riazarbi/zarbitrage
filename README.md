@@ -1,4 +1,10 @@
+# *ARCHIVED*
+
+This was a fun project, but it lost applicability once the ability to deposit funds from South Africa to Kraken was closed up in October 2023. Leaving it up for posterity, but scraping no longer occurs.
+
+
 # ZARBITRAGE
+
 
 ![Docker Build](https://github.com/riazarbi/zarbitrage/actions/workflows/build.yaml/badge.svg)
 
